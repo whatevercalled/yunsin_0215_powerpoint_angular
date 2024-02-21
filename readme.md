@@ -38,9 +38,18 @@ export class A1Component implements OnInit {
 }
 ```
 ```
-    this.articleService.getData().subscribe(result=>{
-      this.articles=result;
-    })
+    export class ArticleListComponent {
+    articles:any;
+    // TODO 請使用observable 型別與 async 管道服進行修改
+    constructor(private articleService:HeaderArticleService){
+
+    }
+    ngOnInit(){
+      this.articleService.getData().subscribe(result=>{
+        this.articles=result;
+      })
+    }
+}
 ```
 # functional programming
 <a name="functionalprogram"></a>
