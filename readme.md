@@ -37,6 +37,11 @@ export class A1Component implements OnInit {
 
 }
 ```
+```
+    this.articleService.getData().subscribe(result=>{
+      this.articles=result;
+    })
+```
 # functional programming
 <a name="functionalprogram"></a>
 ```
