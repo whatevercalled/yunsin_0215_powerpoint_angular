@@ -3,17 +3,19 @@
 用注入service的方式，減少組件的代碼，並且可以復用
 ```
 import { Injectable } from '@angular/core';
-
 @Injectable({
   providedIn: 'root'
 })
 export class ExampleService {
   num = 0;
 
-  constructor() { }
+  constructor() {private http:HttpClient }
 
   add() {
     this.num++;
+  }
+  getData(){
+    return this.http.get('api/articles.json');
   }
 
 }
